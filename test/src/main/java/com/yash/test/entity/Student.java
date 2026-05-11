@@ -1,11 +1,18 @@
 package com.yash.test.entity;
 
 
+//import jakarta.persistence.Entity;
+//import jakarta.persistence.GeneratedValue;
+//import jakarta.persistence.Id;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+//@Entity
 @Component
+@Scope("prototype")
 public class Student {
 
+//    @Id
     private int roll;
     private String name;
 

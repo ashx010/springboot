@@ -1,0 +1,1 @@
+insert into emp (id, name) values (2, 'dsds');

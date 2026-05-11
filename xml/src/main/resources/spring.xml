@@ -4,10 +4,17 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="userRepo" class="com.yash.xml.UserRepo" />
-
-    <bean id="userService" class="com.yash.xml.UserService">
-        <constructor-arg ref="userRepo"/>
+    <bean id="userRepo" class="com.yash.xml.UserRepo">
+        <property name="username" value="Alien" />
     </bean>
 
+    <!--
+        <bean id="userService" class="com.yash.xml.UserService">
+        </bean>
+        no autowire, so no constructor inject..
+        -->
+
+    <bean id="userService" class="com.yash.xml.UserService">
+        <constructor-arg ref="userRepo" />
+    </bean>
 </beans>

@@ -1,9 +1,12 @@
 package com.yash.test;
 
 import com.yash.test.entity.Student;
+import com.yash.test.service.StudentSer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+
+import java.util.List;
 
 @SpringBootApplication
 public class TestApplication {
@@ -13,8 +16,16 @@ public class TestApplication {
 
 		Student st = context.getBean(Student.class);
 
-		st.setName("Lol");
-		st.setRoll(12);
+		st.setName("xyz");
+		st.setRoll(4);
+
+		StudentSer ser = context.getBean(StudentSer.class);
+
+		ser.addStudent(st);
+
+		List<Student> stList = ser.getAllStudents();
+		System.out.println(stList.toString());
+
 
 	}
 
